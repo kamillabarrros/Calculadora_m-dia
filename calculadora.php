@@ -54,14 +54,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
   
-    echo "<h1>Média: " . number_format($media, 2) . "</h1>";
+    echo "<h1>Média: " . number_format($media) . "</h1>";
     echo "<h2>Conceito: " . $conceito . "</h2>";
     echo "<p>" . $mensagem . "</p>";
 
     if ($conceito === 'C') {
         echo '<h3>Formulário de Recuperação</h3>';
         echo '<form action="verifica_recuperacao.php" method="post">';
-        echo '<input type="hidden" name="media_bimestral" value="' . number_format($media, 2) . '">';
+        echo '<input type="hidden" name="media_bimestral" value="' . number_format($media) . '">';
         echo '<label for="nota_recuperacao">Nota da Recuperação:</label>';
         echo '<input type="number" id="nota_recuperacao" name="nota_recuperacao" step="0.01" required><br><br>';
         echo '<input type="submit" value="Verificar Recuperação">';
